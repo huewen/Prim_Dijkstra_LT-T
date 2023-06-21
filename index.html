@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="./style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <div class="controller">
+        <ul>
+            <li><button id="btn_addPoint">Thêm đỉnh</button></li>
+            <li><button id="btn_addEdge">Thêm cạnh</button></li>
+            <li><button id="btn_select">Chọn đỉnh</button></li>
+            <button onclick="location.reload();">Reset</button>
+            <li id="wrap_animationSpeed">
+            <label>Tốc độ duyệt: <span class="animation-slider-value">1000</span>ms</label>
+            <div class="animation-slider">
+                <input class="animation-slider-range" type="range" value="1000" min="0" max="2000">
+            </div>
+        </ul>
+        <p><span style="color: green">Màu xanh</span>: Đường đi tối ưu</p>
+        <p><span style="color: red">Màu đỏ</span>: Đường đi đã duyệt qua</p>
+        <select id="algorithm-choosing">
+            <option value="">Lựa chọn phương thức duyệt</option>
+            <option value="dijkstra">Dijkstra</option>
+            <option value="prim">Prim</option>
+        </select>
+        <p id="dijkstra-option">Đường đi ngắn nhất </br>từ <select id="from"></select> đến <select id="to"></select>
+        </p>
+        <p id="prim-option">Chọn đỉnh bắt đầu</br><select id="vertex"></select>
+        </p>
+
+        <button id="btn_run_algorithm"><i class="fa fa-play icon"></i> Chạy thuật toán</button>
+        </div>
+        <div id="notification">Loading...</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./slider.js"></script>
+    <script src="./main.js"></script>
+    </body>
+</html>
